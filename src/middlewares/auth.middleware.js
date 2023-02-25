@@ -12,8 +12,7 @@ const config = require('../../config')
 const passportConfigs = {
     //? Esta configuracion lo que hace es extraer el Bearer Token de mi peticion
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(), //? 
-    //* secretOrKey: config.secretOrKey
-    secretOrKey: secretOrKey
+    secretOrKey: config.secretOrKey  //*secretOrKey: secretOrKey
 }
 
 
