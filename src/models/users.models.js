@@ -24,14 +24,21 @@ const Users = db.define("users", {
     type: DataTypes.STRING,
     allowNull: false
   },
-  profileImage:{
+  gender:{
     type: DataTypes.STRING
   },
-  phone: {
-    type: DataTypes.STRING,
+  birthday:{
+    type: DataTypes.DATEONLY,
+    allowNull: true
   },
-  isActive: {
-    type: DataTypes.BOOLEAN,
+  profileImg: {
+    type: DataTypes.STRING
+  },
+  role: {
+    type: DataTypes.INTEGER,
+  },
+  status: {
+    type: DataTypes.STRING,
     defaultValue: true
   }
 });
