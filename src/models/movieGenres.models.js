@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 
 const db = require("../utils/database");
-const Genres = require("./genres.modules");
+const Genres = require("./genres.models");
 const Movies = require("./movies.models");
 
 

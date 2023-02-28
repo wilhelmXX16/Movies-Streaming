@@ -6,8 +6,10 @@ const initModels = require('./models/initModels')
 const config = require('../config').api
 
 
+
 const userRouter = require('./users/users.router')
 const authRouter = require('./auth/auth.router')
+const upload = require('./utils/multer')
 
 const app = express()
 
@@ -32,6 +34,11 @@ app.get('/', (req, res) => {
             "users": `${config.host}/api/v1/users`,
         }
     })
+})
+
+app.post('/upload-file', upload.single('myImge'), (req,res) => {
+    const file = req.file
+    res.status(200).json({file})
 })
 
 app.use('/api/v1/users', userRouter)
