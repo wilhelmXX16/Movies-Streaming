@@ -1,51 +1,51 @@
-const { DataTypes } = require('sequelize')
+const { DataTypes } = require("sequelize");
 
-const db = require('../utils/database')
+const db = require("../utils/database");
 
-const Movies = db.define("movies", {
+const Movies = db.define('movies', {
     id:{
         type: DataTypes.UUID,
         primaryKey: true
     },
     title: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
     synopsis: {
         type: DataTypes.TEXT,
-        allowNull: true
+        allowNull: false
     },
     releaseYear: {
         type: DataTypes.INTEGER,
-        allowNull: true
+        allowNull: false 
     },
     director: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
     duration: {
         type: DataTypes.INTEGER,
-        allowNull: true
+        allowNull: false,    
     },
-    traillerUrl: {
+    trillerUrl: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
     coverUrl: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
     movieUrl: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
-    clasification: {
+    classification: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
     rating: {
         type: DataTypes.FLOAT,
-        allowNull: false
+        defaultValue: 0.0
     }
 })
 

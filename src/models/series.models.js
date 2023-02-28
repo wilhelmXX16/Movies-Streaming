@@ -9,27 +9,27 @@ const Series = db.define('series',{
     },
     title: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
     synopsis: {
         type: DataTypes.TEXT,
-        allowNull: true
+        allowNull: false
     },
     releaseYear: {
         type: DataTypes.INTEGER,
-        allowNull: true
+        allowNull: false 
     },
     director: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
-    clasification: {
+    classification: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
     rating: {
         type: DataTypes.FLOAT,
-        allowNull: false
+        defaultValue: 0.0
     }
 })
  module.exports = Series

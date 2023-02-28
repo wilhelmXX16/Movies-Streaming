@@ -1,20 +1,19 @@
 const { DataTypes } = require("sequelize");
 
 const db = require("../utils/database");
-const Genres = require("./genres.modules");
-const Movies = require("./movies.models");
+const Genres = require("./genres.models");
+const Series = require("./series.models");
 
-
-const MovieGenres = db.define('movie_genres', {
+const SeriesGenres = db.define('series_genres', {
     id: {
         type: DataTypes.UUID,
         primaryKey: true
     },
-    movieId: {
+    seriesId: {
         type: DataTypes.UUID,
         allowNull: false,
         references: {
-            model: Movies,
+            model: Series,
             key: 'id'
         }
     },
@@ -28,4 +27,4 @@ const MovieGenres = db.define('movie_genres', {
     }
 })
 
-module.exports = MovieGenres
+module.exports = SeriesGenres
