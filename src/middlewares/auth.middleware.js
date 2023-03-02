@@ -1,21 +1,14 @@
-
 const { ExtractJwt, Strategy } = require('passport-jwt')
-
 const passport = require('passport')
 
 const { findUserById } = require('../users/users.controllers')
-//*const {secretOrKey} = require('../../config')
-const config = require('../../config').api
- 
-//? Generamos configuraciones basicas para manejar passport con jwt
+const config = require('../../config').api 
+
 const passportConfigs = {
-    //? Esta configuracion lo que hace es extraer el Bearer Token de mi peticion
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(), //? 
-    secretOrKey: config.secretOrKey  //*secretOrKey: secretOrKey
+    secretOrKey: config.secretOrKey
 }
 
-
-//? done()
 passport.use(new Strategy(passportConfigs, (tokenDecoded, done) => {
     findUserById(tokenDecoded.id)
         .then(data => {
