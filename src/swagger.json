@@ -16,6 +16,38 @@
                     }
                 }
             }
+        },
+        "/api/v1/movies": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Obtener todos mis peliculas"
+                    },
+                    "400" : {
+                        "description": "Ocurrio un error al intentar obtener todos las peliculas"
+                    }
+                }
+            }
+        },
+        "/api/v1/movies/{movieId}": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "movieId",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Obtener todos mis peliculas"
+                    },
+                    "400" : {
+                        "description": "Ocurrio un error al intentar obtener todos las peliculas"
+                    }
+                }
+            }
         }
     }
 }
